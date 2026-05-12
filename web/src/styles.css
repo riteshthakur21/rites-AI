@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Inter", "Fira Code", system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(108, 99, 255, 0.12), transparent 40%),
+    #07070f;
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg shadow-black/30;
+}
+
+.glass-input {
+  @apply w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/90 outline-none focus:border-neo-accent/60;
+}
+
+.glass-button {
+  @apply rounded-xl border border-neo-accent/40 bg-neo-accent/20 px-4 py-3 text-sm font-semibold text-white transition hover:bg-neo-accent/40;
+}

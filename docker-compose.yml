@@ -1,0 +1,19 @@
+services:
+  server:
+    build: ./server
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - JWT_SECRET=change_me_super_secret
+      - CORS_ORIGIN=http://localhost:5173
+    volumes:
+      - ./server/data:/app/data
+  web:
+    build:
+      context: ./web
+      args:
+        VITE_API_URL: http://localhost:8080
+    ports:
+      - "5173:80"

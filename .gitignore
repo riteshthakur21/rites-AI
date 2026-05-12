@@ -8,6 +8,16 @@ a.out
 build/
 bin/
 
+# Node / web
+node_modules/
+dist/
+.env
+.env.*
+.cache/
+.turbo/
+server/data/
+web/dist/
+
 # IDE files
 .vscode/
 .idea/

@@ -1,0 +1,19 @@
+{
+  "name": "rites-ai",
+  "private": true,
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm --prefix server run dev\" \"npm --prefix web run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev",
+    "build": "npm --prefix server run build && npm --prefix web run build",
+    "lint": "node -e \"console.log('No lint configured')\"",
+    "clean": "node -e \"const fs=require('fs');const path=require('path');const targets=['node_modules',path.join('server','node_modules'),path.join('web','node_modules'),'package-lock.json',path.join('server','package-lock.json'),path.join('web','package-lock.json')];for(const t of targets){try{fs.rmSync(t,{recursive:true,force:true});console.log('removed',t);}catch(e){console.error('failed',t,e.message);}}\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
